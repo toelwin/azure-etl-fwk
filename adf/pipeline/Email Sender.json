@@ -23,6 +23,10 @@
 						"value": "{\n\"emailRecipients\": \"@{pipeline().parameters.Recipients}\",\n\"emailCcRecipients\": \"@{pipeline().parameters.CcRecipients}\",\n\"emailBccRecipients\": \"@{pipeline().parameters.BccRecipients}\",\n\"emailSubject\": \"@{pipeline().parameters.Subject}\",\n\"emailBody\": \"@{pipeline().parameters.Body}\",\n\"emailImportance\": \"@{pipeline().parameters.Importance}\"\n}",
 						"type": "Expression"
 					}
+				},
+				"linkedServiceName": {
+					"referenceName": "FrameworkFunctions",
+					"type": "LinkedServiceReference"
 				}
 			}
 		],
