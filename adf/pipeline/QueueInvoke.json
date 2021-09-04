@@ -1,0 +1,68 @@
+{
+	"name": "QueueInvoke",
+	"properties": {
+		"activities": [
+			{
+				"name": "Send Message",
+				"type": "WebActivity",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"url": {
+						"value": "https://tlem22adlsgp2default.queue.core.windows.net/test-queue/messages?sv=2020-08-04&ss=q&srt=sco&sp=rwdlacup&se=2099-12-31T23:12:01Z&st=2021-08-27T14:12:01Z&spr=https&sig=eyXS30dnlj%2B2OhEM7mcln%2FkJfoA%2B6hcJAOj05J1Oonw%3D",
+						"type": "Expression"
+					},
+					"connectVia": {
+						"referenceName": "AzureIR-MVNET",
+						"type": "IntegrationRuntimeReference"
+					},
+					"method": "POST",
+					"body": "<QueueMessage><MessageText>Hello</MessageText></QueueMessage>"
+				}
+			},
+			{
+				"name": "Send Message_MI",
+				"type": "WebActivity",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"url": {
+						"value": "https://tlem22adlsgp2default.queue.core.windows.net/test-queue/messages",
+						"type": "Expression"
+					},
+					"connectVia": {
+						"referenceName": "AzureIR-MVNET",
+						"type": "IntegrationRuntimeReference"
+					},
+					"method": "POST",
+					"headers": {
+						"x-ms-version": "2017-11-09",
+						"content-type": "application/xml"
+					},
+					"body": "<QueueMessage><MessageText>Hello</MessageText></QueueMessage>",
+					"authentication": {
+						"type": "MSI",
+						"resource": "https://storage.azure.com/"
+					}
+				}
+			}
+		],
+		"annotations": [],
+		"lastPublishTime": "2021-09-02T16:37:33Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

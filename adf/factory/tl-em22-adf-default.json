@@ -1,0 +1,9 @@
+{
+	"name": "tl-em22-adf-default",
+	"location": "uksouth",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "5a5c61de-48c8-459d-9fd5-5571cb70abd9",
+		"tenantId": "76e3921f-489b-4b7e-9547-9ea297add9b5"
+	}
+}

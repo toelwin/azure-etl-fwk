@@ -1,0 +1,10 @@
+{
+	"name": "tlem22adlsgp2default-managed-pep",
+	"properties": {
+		"privateLinkResourceId": "/subscriptions/9222c2a3-7199-4acb-a108-3a8131571c5f/resourceGroups/tl-servicehub-poc/providers/Microsoft.Storage/storageAccounts/tlem22adlsgp2default",
+		"groupId": "dfs",
+		"fqdns": [
+			"tlem22adlsgp2default.dfs.core.windows.net"
+		]
+	}
+}
